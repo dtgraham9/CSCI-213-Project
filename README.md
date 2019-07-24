@@ -9,8 +9,8 @@ expertise in providing suitable advice for each student.
 You should develop an “Appointment registration, communication and timetabling systems” for students, 
 as the timetable contradictions may reduce the chance of registering courses for students.
 
-***Requirements***
-Identify users for “Appointment registration, communication and timetabling systems”.
-Create Use-case diagram(s) for every user. 
-Create User Stories. (10 total)
-Create one use-case scenario for “Make an appointment with Advisor” Use-case.
+# Requirements
+1. Identify users for “Appointment registration, communication and timetabling systems”.
+2 .Create Use-case diagram(s) for every user. 
+3. Create User Stories. 
+4. Create one use-case scenario for “Make an appointment with Advisor” Use-case.
