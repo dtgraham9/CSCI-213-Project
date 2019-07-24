@@ -1,0 +1,16 @@
+# CSCI-213-Project
+Web Application Form powered with .Net Framework.
+
+Academic advising is one of the most important activities of the faculty members for following up 
+and guiding the students during their study. It includes many time-consuming tasks, as the academic advisor 
+needs to investigate the cases of all student individually to specify the available choices, and to apply his 
+expertise in providing suitable advice for each student. 
+
+You should develop an “Appointment registration, communication and timetabling systems” for students, 
+as the timetable contradictions may reduce the chance of registering courses for students.
+
+***Requirements***
+Identify users for “Appointment registration, communication and timetabling systems”.
+Create Use-case diagram(s) for every user. 
+Create User Stories. (10 total)
+Create one use-case scenario for “Make an appointment with Advisor” Use-case.
