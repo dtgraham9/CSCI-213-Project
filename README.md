@@ -11,6 +11,6 @@ as the timetable contradictions may reduce the chance of registering courses for
 
 # Requirements
 1. Identify users for “Appointment registration, communication and timetabling systems”.
-2 .Create Use-case diagram(s) for every user. 
+2. Create Use-case diagram(s) for every user. 
 3. Create User Stories. 
 4. Create one use-case scenario for “Make an appointment with Advisor” Use-case.
