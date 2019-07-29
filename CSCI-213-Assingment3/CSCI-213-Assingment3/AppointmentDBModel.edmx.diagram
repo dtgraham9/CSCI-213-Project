@@ -14,6 +14,7 @@
         <AssociationConnector Association="AppointmentDBModel.StudentTableAppointmentTable" />
         <AssociationConnector Association="AppointmentDBModel.AdvisorTableAppointmentTable" />
         <AssociationConnector Association="AppointmentDBModel.AdvisorTableStudentTable" />
+        <AssociationConnector Association="AppointmentDBModel.UserTableAdvisorTable" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

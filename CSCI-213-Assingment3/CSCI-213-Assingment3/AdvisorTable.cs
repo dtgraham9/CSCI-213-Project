@@ -31,5 +31,6 @@ namespace CSCI_213_Assingment3
         public virtual ICollection<AppointmentTable> AppointmentTables { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<StudentTable> StudentTables { get; set; }
+        public virtual UserTable UserTable { get; set; }
     }
 }

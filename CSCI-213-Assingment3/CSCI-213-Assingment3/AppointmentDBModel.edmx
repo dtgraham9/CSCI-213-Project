@@ -78,6 +78,7 @@
           <Property Name="AdvisorLocation" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
           <NavigationProperty Name="AppointmentTables" Relationship="AppointmentDBModel.AdvisorTableAppointmentTable" FromRole="AdvisorTable" ToRole="AppointmentTable" />
           <NavigationProperty Name="StudentTables" Relationship="AppointmentDBModel.AdvisorTableStudentTable" FromRole="AdvisorTable" ToRole="StudentTable" />
+          <NavigationProperty Name="UserTable" Relationship="AppointmentDBModel.UserTableAdvisorTable" FromRole="AdvisorTable" ToRole="UserTable" />
         </EntityType>
         <EntityType Name="AppointmentTable">
           <Key>
@@ -124,6 +125,7 @@
           <Property Name="UserRole" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="UserEmail" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
           <NavigationProperty Name="StudentTables" Relationship="AppointmentDBModel.UserTableStudentTable" FromRole="UserTable" ToRole="StudentTable" />
+          <NavigationProperty Name="AdvisorTables" Relationship="AppointmentDBModel.UserTableAdvisorTable" FromRole="UserTable" ToRole="AdvisorTable" />
         </EntityType>
         <EntityContainer Name="AppointmentDBEntities" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="AdvisorTables" EntityType="Self.AdvisorTable" />
@@ -146,6 +148,10 @@
           <AssociationSet Name="AdvisorTableStudentTable" Association="AppointmentDBModel.AdvisorTableStudentTable">
             <End Role="AdvisorTable" EntitySet="AdvisorTables" />
             <End Role="StudentTable" EntitySet="StudentTables" />
+          </AssociationSet>
+          <AssociationSet Name="UserTableAdvisorTable" Association="AppointmentDBModel.UserTableAdvisorTable">
+            <End Role="UserTable" EntitySet="UserTables" />
+            <End Role="AdvisorTable" EntitySet="AdvisorTables" />
           </AssociationSet>
         </EntityContainer>
         <Association Name="UserTableStudentTable">
@@ -193,6 +199,18 @@
             </Principal>
             <Dependent Role="StudentTable">
               <PropertyRef Name="StudentAdvisorID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="UserTableAdvisorTable">
+          <End Type="AppointmentDBModel.UserTable" Role="UserTable" Multiplicity="1" />
+          <End Type="AppointmentDBModel.AdvisorTable" Role="AdvisorTable" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="UserTable">
+              <PropertyRef Name="UserName" />
+            </Principal>
+            <Dependent Role="AdvisorTable">
+              <PropertyRef Name="AdvisorUserName" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
