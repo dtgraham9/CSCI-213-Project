@@ -14,9 +14,18 @@ namespace CSCI_213_Assingment3
     
     public partial class UserTable
     {
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        public UserTable()
+        {
+            this.StudentTables = new HashSet<StudentTable>();
+        }
+    
         public string UserName { get; set; }
         public string UserPassword { get; set; }
         public string UserRole { get; set; }
         public string UserEmail { get; set; }
+    
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<StudentTable> StudentTables { get; set; }
     }
 }

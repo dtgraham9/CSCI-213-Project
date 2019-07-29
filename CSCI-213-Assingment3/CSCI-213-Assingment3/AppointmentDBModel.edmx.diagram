@@ -5,11 +5,15 @@
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
       <Diagram DiagramId="d0c3cf945e234098ab44d13663469250" Name="Diagram1">
-        <EntityTypeShape EntityType="AppointmentDBModel.AdvisorTable" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="AppointmentDBModel.AppointmentTable" Width="1.5" PointX="7.125" PointY="0.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="AppointmentDBModel.MessagesTable" Width="1.5" PointX="4.875" PointY="0.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="AppointmentDBModel.StudentTable" Width="1.5" PointX="0.75" PointY="3.25" IsExpanded="true" />
-        <EntityTypeShape EntityType="AppointmentDBModel.UserTable" Width="1.5" PointX="2.875" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="AppointmentDBModel.AdvisorTable" Width="1.5" PointX="6.625" PointY="0.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="AppointmentDBModel.AppointmentTable" Width="1.5" PointX="6" PointY="3.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="AppointmentDBModel.MessagesTable" Width="1.5" PointX="8.625" PointY="1.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="AppointmentDBModel.StudentTable" Width="1.5" PointX="3.25" PointY="0.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="AppointmentDBModel.UserTable" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
+        <AssociationConnector Association="AppointmentDBModel.UserTableStudentTable" />
+        <AssociationConnector Association="AppointmentDBModel.StudentTableAppointmentTable" />
+        <AssociationConnector Association="AppointmentDBModel.AdvisorTableAppointmentTable" />
+        <AssociationConnector Association="AppointmentDBModel.AdvisorTableStudentTable" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

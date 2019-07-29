@@ -1,4 +1,4 @@
-﻿// T4 code generation is enabled for model 'C:\Users\dalin\source\repos\dtgraham9\CSCI-213-Project\CSCI-213-Assingment3\CSCI-213-Assingment3\AppointmentDBModel.edmx'. 
+﻿// T4 code generation is enabled for model 'C:\Users\Graham\Documents\CSCI 213\CSCI-213-Project\CSCI-213-Assingment3\CSCI-213-Assingment3\AppointmentDBModel.edmx'. 
 // To enable legacy code generation, change the value of the 'Code Generation Strategy' designer
 // property to 'Legacy ObjectContext'. This property is available in the Properties Window when the model
 // is open in the designer.

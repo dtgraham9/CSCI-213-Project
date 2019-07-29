@@ -20,5 +20,8 @@ namespace CSCI_213_Assingment3
         public string AppointmentReason { get; set; }
         public int AdvisorID { get; set; }
         public int StudentID { get; set; }
+    
+        public virtual StudentTable StudentTable { get; set; }
+        public virtual AdvisorTable AdvisorTable { get; set; }
     }
 }

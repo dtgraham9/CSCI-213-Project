@@ -14,10 +14,22 @@ namespace CSCI_213_Assingment3
     
     public partial class AdvisorTable
     {
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        public AdvisorTable()
+        {
+            this.AppointmentTables = new HashSet<AppointmentTable>();
+            this.StudentTables = new HashSet<StudentTable>();
+        }
+    
         public int AdvisorID { get; set; }
         public string AdvisorLastName { get; set; }
         public string AdvisorFirstName { get; set; }
         public string AdvisorUserName { get; set; }
         public string AdvisorLocation { get; set; }
+    
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<AppointmentTable> AppointmentTables { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<StudentTable> StudentTables { get; set; }
     }
 }
