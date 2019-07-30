@@ -75,6 +75,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Advisors\Advisor_Home.aspx" />
     <Content Include="AppointmentDBModel.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>AppointmentDBModel.Context.cs</LastGenOutput>
@@ -89,9 +90,18 @@
     <Content Include="App_Data\AppointmentDB_log.ldf">
       <DependentUpon>AppointmentDB.mdf</DependentUpon>
     </Content>
+    <Content Include="Login_Page.aspx" />
+    <Content Include="Students\Student_Home.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Advisors\Advisor_Home.aspx.cs">
+      <DependentUpon>Advisor_Home.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Advisors\Advisor_Home.aspx.designer.cs">
+      <DependentUpon>Advisor_Home.aspx</DependentUpon>
+    </Compile>
     <Compile Include="AdvisorTable.cs">
       <DependentUpon>AppointmentDBModel.tt</DependentUpon>
     </Compile>
@@ -113,6 +123,13 @@
     <Compile Include="AppointmentTable.cs">
       <DependentUpon>AppointmentDBModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="Login_Page.aspx.cs">
+      <DependentUpon>Login_Page.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Login_Page.aspx.designer.cs">
+      <DependentUpon>Login_Page.aspx</DependentUpon>
+    </Compile>
     <Compile Include="MessagesTable.cs">
       <DependentUpon>AppointmentDBModel.tt</DependentUpon>
     </Compile>
@@ -123,6 +140,13 @@
     </Compile>
     <Compile Include="Site1.Master.designer.cs">
       <DependentUpon>Site1.Master</DependentUpon>
+    </Compile>
+    <Compile Include="Students\Student_Home.aspx.cs">
+      <DependentUpon>Student_Home.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Students\Student_Home.aspx.designer.cs">
+      <DependentUpon>Student_Home.aspx</DependentUpon>
     </Compile>
     <Compile Include="StudentTable.cs">
       <DependentUpon>AppointmentDBModel.tt</DependentUpon>
