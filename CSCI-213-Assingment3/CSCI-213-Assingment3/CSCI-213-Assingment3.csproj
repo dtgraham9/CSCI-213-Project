@@ -86,6 +86,16 @@
       <DependentUpon>AppointmentDBModel.edmx</DependentUpon>
       <LastGenOutput>AppointmentDBModel.cs</LastGenOutput>
     </Content>
+    <Content Include="AppointmentModel.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>AppointmentModel.edmx</DependentUpon>
+      <LastGenOutput>AppointmentModel.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="AppointmentModel.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>AppointmentModel.edmx</DependentUpon>
+      <LastGenOutput>AppointmentModel.cs</LastGenOutput>
+    </Content>
     <Content Include="App_Data\AppointmentDB.mdf" />
     <Content Include="App_Data\AppointmentDB_log.ldf">
       <DependentUpon>AppointmentDB.mdf</DependentUpon>
@@ -105,7 +115,7 @@
       <DependentUpon>Advisor_Home.aspx</DependentUpon>
     </Compile>
     <Compile Include="AdvisorTable.cs">
-      <DependentUpon>AppointmentDBModel.tt</DependentUpon>
+      <DependentUpon>AppointmentModel.tt</DependentUpon>
     </Compile>
     <Compile Include="AppointmentDBModel.Context.cs">
       <AutoGen>True</AutoGen>
@@ -122,8 +132,23 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>AppointmentDBModel.edmx</DependentUpon>
     </Compile>
+    <Compile Include="AppointmentModel.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>AppointmentModel.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="AppointmentModel.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>AppointmentModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="AppointmentModel.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>AppointmentModel.edmx</DependentUpon>
+    </Compile>
     <Compile Include="AppointmentTable.cs">
-      <DependentUpon>AppointmentDBModel.tt</DependentUpon>
+      <DependentUpon>AppointmentModel.tt</DependentUpon>
     </Compile>
     <Compile Include="default.aspx.cs">
       <DependentUpon>default.aspx</DependentUpon>
@@ -140,7 +165,7 @@
       <DependentUpon>Login_Page.aspx</DependentUpon>
     </Compile>
     <Compile Include="MessagesTable.cs">
-      <DependentUpon>AppointmentDBModel.tt</DependentUpon>
+      <DependentUpon>AppointmentModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Site1.Master.cs">
@@ -165,10 +190,10 @@
       <DependentUpon>Student_Home.aspx</DependentUpon>
     </Compile>
     <Compile Include="StudentTable.cs">
-      <DependentUpon>AppointmentDBModel.tt</DependentUpon>
+      <DependentUpon>AppointmentModel.tt</DependentUpon>
     </Compile>
     <Compile Include="UserTable.cs">
-      <DependentUpon>AppointmentDBModel.tt</DependentUpon>
+      <DependentUpon>AppointmentModel.tt</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
@@ -178,6 +203,13 @@
     </EntityDeploy>
     <Content Include="AppointmentDBModel.edmx.diagram">
       <DependentUpon>AppointmentDBModel.edmx</DependentUpon>
+    </Content>
+    <EntityDeploy Include="AppointmentModel.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>AppointmentModel.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="AppointmentModel.edmx.diagram">
+      <DependentUpon>AppointmentModel.edmx</DependentUpon>
     </Content>
     <None Include="packages.config" />
     <Content Include="Site1.Master" />

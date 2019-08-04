@@ -13,7 +13,7 @@ namespace CSCI_213_Assingment3.Students
         protected void check_role()
         {
             string userName = User.Identity.Name;
-            AppointmentDBEntities dbconTemp = new AppointmentDBEntities();
+            AppointmentDBEntities1 dbconTemp = new AppointmentDBEntities1();
             UserTable credentials = dbconTemp.UserTables.Find(userName);
             if(credentials.UserRole != "student")
                 Response.Redirect(ResolveUrl("default.aspx"));
@@ -21,7 +21,7 @@ namespace CSCI_213_Assingment3.Students
         }
 
 
-        AppointmentDBEntities dbcon = new AppointmentDBEntities();
+        AppointmentDBEntities1 dbcon = new AppointmentDBEntities1();
 
         int userID, advisorID;
         public void NewBDcon()
@@ -31,7 +31,7 @@ namespace CSCI_213_Assingment3.Students
             if (dbcon != null)
             {
                 dbcon.Dispose();
-                dbcon = new AppointmentDBEntities();
+                dbcon = new AppointmentDBEntities1();
             }
 
         }
@@ -52,12 +52,34 @@ namespace CSCI_213_Assingment3.Students
             dbcon.AdvisorTables.Load();
             dbcon.AppointmentTables.Load();
 
-            appointmentsView.DataSource = from appointment in dbcon.AppointmentTables.Local
-                            orderby appointment.AppointmentDate, appointment.AppointmentTime
-                            where appointment.AppointmentDate >= DateTime.Today
-                            join advisor in dbcon.AdvisorTables.Local on appointment.AdvisorID equals advisor.AdvisorID
-                            join student in dbcon.StudentTables.Local on appointment.StudentID equals student.StudentID
-                            select appointment;
+             var results= from appointment in dbcon.AppointmentTables.Local
+                                          orderby appointment.AppointmentDate, appointment.AppointmentTime
+                                          where appointment.AppointmentDate >= DateTime.Today
+                                          join advisor in dbcon.AdvisorTables.Local on appointment.AdvisorID equals advisor.AdvisorID
+                                          join student in dbcon.StudentTables.Local on appointment.StudentID equals student.StudentID
+                                          select new
+                                          {
+                                              appointment.AppointmentID,
+                                              appointment.AppointmentDate,
+                                              appointment.AppointmentTime,
+                                              advisor.AdvisorLastName,
+                                              advisor.AdvisorFirstName,
+                                              student.StudentLastName,
+                                              student.StudentFirstName,
+                                              appointment.AppointmentReason
+                                          };
+            var formatedResults = from result in results
+                                  select new
+                                  {
+                                      AppointmentID = result.AppointmentID,
+                                      Date = result.AppointmentDate.ToShortDateString(),
+                                      Time = result.AppointmentDate.Add(result.AppointmentTime).ToString("hh:mm tt"),
+                                      AdvisorName = result.AdvisorFirstName + " " + result.AdvisorLastName,
+                                      StudentName = result.StudentFirstName + " " + result.StudentLastName,
+                                      Reason = result.AppointmentReason
+                                  };
+            appointmentsView.DataSource = formatedResults;
+            appointmentsView.DataBind();
         }
     }
 }

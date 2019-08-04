@@ -17,7 +17,7 @@ namespace CSCI_213_Assingment3
 
         protected void Login1_Authenticate(object sender, AuthenticateEventArgs e)
         {
-            AppointmentDBEntities dbcon = new AppointmentDBEntities();
+            AppointmentDBEntities1 dbcon = new AppointmentDBEntities1();
             UserTable loginCred = dbcon.UserTables.Find(Login1.UserName.Trim());
             /* UserTable user = (from x in dbcon.UserTables.Local
              *                   where x.UserName.Trim().Equals(name)

@@ -4,57 +4,57 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-    <Schema Namespace="AppointmentDBModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+    <Schema xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl" Alias="Self" Namespace="AppointmentDBModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012">
         <EntityType Name="AdvisorTable">
           <Key>
             <PropertyRef Name="AdvisorID" />
           </Key>
-          <Property Name="AdvisorID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="AdvisorLastName" Type="varchar" MaxLength="50" Nullable="false" />
-          <Property Name="AdvisorFirstName" Type="varchar" MaxLength="50" Nullable="false" />
-          <Property Name="AdvisorUserName" Type="varchar" MaxLength="50" Nullable="false" />
-          <Property Name="AdvisorLocation" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="AdvisorID" Nullable="false" StoreGeneratedPattern="Identity" Type="int" />
+          <Property Name="AdvisorLastName" Nullable="false" MaxLength="50" Type="varchar" />
+          <Property Name="AdvisorFirstName" Nullable="false" MaxLength="50" Type="varchar" />
+          <Property Name="AdvisorUserName" Nullable="false" MaxLength="50" Type="varchar" />
+          <Property Name="AdvisorLocation" Nullable="false" MaxLength="50" Type="varchar" />
         </EntityType>
         <EntityType Name="AppointmentTable">
           <Key>
             <PropertyRef Name="AppointmentID" />
           </Key>
-          <Property Name="AppointmentID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="AppointmentTime" Type="time" Precision="7" Nullable="false" />
-          <Property Name="AppointmentDate" Type="datetime" Nullable="false" />
-          <Property Name="AppointmentReason" Type="varchar" MaxLength="150" Nullable="false" />
-          <Property Name="AdvisorID" Type="int" Nullable="false" />
-          <Property Name="StudentID" Type="int" Nullable="false" />
+          <Property Name="AppointmentID" Nullable="false" StoreGeneratedPattern="Identity" Type="int" />
+          <Property Name="AppointmentTime" Nullable="false" Precision="7" Type="time" />
+          <Property Name="AppointmentDate" Nullable="false" Type="datetime" />
+          <Property Name="AppointmentReason" Nullable="false" MaxLength="150" Type="varchar" />
+          <Property Name="AdvisorID" Nullable="false" Type="int" />
+          <Property Name="StudentID" Nullable="false" Type="int" />
         </EntityType>
         <EntityType Name="MessagesTable">
           <Key>
             <PropertyRef Name="EmailID" />
           </Key>
-          <Property Name="EmailID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="EmailTime" Type="time" Precision="7" Nullable="false" />
-          <Property Name="EmailDate" Type="datetime" Nullable="false" />
-          <Property Name="EmailText" Type="varchar(max)" Nullable="false" />
-          <Property Name="EmailTo" Type="nvarchar" MaxLength="50" Nullable="false" />
-          <Property Name="EmailFrom" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="EmailID" Nullable="false" StoreGeneratedPattern="Identity" Type="int" />
+          <Property Name="EmailTime" Nullable="false" Precision="7" Type="time" />
+          <Property Name="EmailDate" Nullable="false" Type="datetime" />
+          <Property Name="EmailText" Nullable="false" Type="varchar(max)" />
+          <Property Name="EmailTo" Nullable="false" MaxLength="50" Type="nvarchar" />
+          <Property Name="EmailFrom" Nullable="false" MaxLength="50" Type="varchar" />
         </EntityType>
         <EntityType Name="StudentTable">
           <Key>
             <PropertyRef Name="StudentID" />
           </Key>
-          <Property Name="StudentID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="StudentLastName" Type="varchar" MaxLength="50" Nullable="false" />
-          <Property Name="StudentFistName" Type="varchar" MaxLength="50" Nullable="false" />
-          <Property Name="StudentUserName" Type="varchar" MaxLength="50" Nullable="false" />
-          <Property Name="StudentAdvisorID" Type="int" Nullable="false" />
+          <Property Name="StudentID" Nullable="false" StoreGeneratedPattern="Identity" Type="int" />
+          <Property Name="StudentLastName" Nullable="false" MaxLength="50" Type="varchar" />
+          <Property Name="StudentFistName" Nullable="false" MaxLength="50" Type="varchar" />
+          <Property Name="StudentUserName" Nullable="false" MaxLength="50" Type="varchar" />
+          <Property Name="StudentAdvisorID" Nullable="false" Type="int" />
         </EntityType>
         <EntityType Name="UserTable">
           <Key>
             <PropertyRef Name="UserName" />
           </Key>
-          <Property Name="UserName" Type="varchar" MaxLength="50" Nullable="false" />
-          <Property Name="UserPassword" Type="varchar" MaxLength="50" Nullable="false" />
-          <Property Name="UserRole" Type="varchar" MaxLength="50" Nullable="false" />
-          <Property Name="UserEmail" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="UserName" Nullable="false" MaxLength="50" Type="varchar" />
+          <Property Name="UserPassword" Nullable="false" MaxLength="50" Type="varchar" />
+          <Property Name="UserRole" Nullable="false" MaxLength="50" Type="varchar" />
+          <Property Name="UserEmail" Nullable="false" MaxLength="50" Type="varchar" />
         </EntityType>
         <EntityContainer Name="AppointmentDBModelStoreContainer">
           <EntitySet Name="AdvisorTable" EntityType="Self.AdvisorTable" Schema="dbo" store:Type="Tables" />
@@ -110,7 +110,7 @@
           </Key>
           <Property Name="StudentID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="StudentLastName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="StudentFistName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="StudentFirstName" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" Type="String" />
           <Property Name="StudentUserName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="StudentAdvisorID" Type="Int32" Nullable="false" />
           <NavigationProperty Name="UserTable" Relationship="AppointmentDBModel.UserTableStudentTable" FromRole="StudentTable" ToRole="UserTable" />
@@ -261,7 +261,7 @@
               <MappingFragment StoreEntitySet="StudentTable">
                 <ScalarProperty Name="StudentID" ColumnName="StudentID" />
                 <ScalarProperty Name="StudentLastName" ColumnName="StudentLastName" />
-                <ScalarProperty Name="StudentFistName" ColumnName="StudentFistName" />
+                <ScalarProperty Name="StudentFirstName" ColumnName="StudentFistName" />
                 <ScalarProperty Name="StudentUserName" ColumnName="StudentUserName" />
                 <ScalarProperty Name="StudentAdvisorID" ColumnName="StudentAdvisorID" />
               </MappingFragment>
