@@ -9,8 +9,10 @@
     </asp:ContentPlaceHolder>
 </head>
 <body>
-    <header>This is the header. Isn't it great</header>
     <form id="form1" runat="server">
+    <header>
+        <asp:LoginStatus ID="LoginStatus1" runat="server" />
+        </header>
         <div>
             <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
             </asp:ContentPlaceHolder>

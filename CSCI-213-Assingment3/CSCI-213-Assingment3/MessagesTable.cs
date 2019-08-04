@@ -18,6 +18,7 @@ namespace CSCI_213_Assingment3
         public System.TimeSpan EmailTime { get; set; }
         public System.DateTime EmailDate { get; set; }
         public string EmailText { get; set; }
-        public string EnailFrom { get; set; }
+        public string EmailTo { get; set; }
+        public string EmailFrom { get; set; }
     }
 }

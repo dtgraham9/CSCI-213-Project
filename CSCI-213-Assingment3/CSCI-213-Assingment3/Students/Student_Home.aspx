@@ -28,27 +28,25 @@
             width: 187px;
             text-align: right;
         }
+        .auto-style10 {
+            width: 100%;
+        }
     </style>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <p>
+        <asp:Label ID="nameLbl" runat="server" Text="Label"></asp:Label>
         <br />
     </p>
     
-        <table style="width:100%;">
+        <table class="auto-style10">
             <tr>
                 <td class="auto-style5">
                     <asp:HyperLink ID="HyperLink1" runat="server" NavigateUrl="~/Students/Apointment_Page.aspx">Make a new appointment</asp:HyperLink>
                 </td>
                 <td class="auto-style7">&nbsp;</td>
                 <td colspan="1" rowspan="3">
-                    <asp:DetailsView ID="DetailsView2" runat="server" AutoGenerateRows="False" DataSourceID="SqlDataSource1" Height="205px" Width="605px">
-                        <Fields>
-                            <asp:BoundField DataField="EmailDate" HeaderText="EmailDate" SortExpression="EmailDate" />
-                            <asp:BoundField DataField="EmailFrom" HeaderText="From" SortExpression="EmailFrom" />
-                            <asp:BoundField DataField="EmailTo" HeaderText="To" SortExpression="EmailTo" />
-                            <asp:BoundField DataField="EmailText" HeaderText="Content" SortExpression="EmailText" />
-                        </Fields>
+                    <asp:DetailsView ID="DetailsView2" runat="server" AutoGenerateRows="False" Height="205px" Width="605px">
                     </asp:DetailsView>
                     <asp:SqlDataSource ID="SqlDataSource2" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>" SelectCommand="SELECT [EmailDate], [EmailFrom], [EmailTo], [EmailText] FROM [MessagesTable] ORDER BY [EmailDate], [EmailFrom]"></asp:SqlDataSource>
                 </td>
@@ -103,6 +101,11 @@
             </tr>
         </table>
   
+    <asp:GridView ID="appointmentsView" runat="server">
+    </asp:GridView>
+  
     <p>
+        <asp:GridView ID="GridView2" runat="server">
+        </asp:GridView>
     </p>
 </asp:Content>

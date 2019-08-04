@@ -90,6 +90,7 @@
     <Content Include="App_Data\AppointmentDB_log.ldf">
       <DependentUpon>AppointmentDB.mdf</DependentUpon>
     </Content>
+    <Content Include="default.aspx" />
     <Content Include="Login_Page.aspx" />
     <Content Include="Students\Appointment_Page.aspx" />
     <Content Include="Students\Student_Home.aspx" />
@@ -123,6 +124,13 @@
     </Compile>
     <Compile Include="AppointmentTable.cs">
       <DependentUpon>AppointmentDBModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="default.aspx.cs">
+      <DependentUpon>default.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="default.aspx.designer.cs">
+      <DependentUpon>default.aspx</DependentUpon>
     </Compile>
     <Compile Include="Login_Page.aspx.cs">
       <DependentUpon>Login_Page.aspx</DependentUpon>
@@ -173,6 +181,7 @@
     </Content>
     <None Include="packages.config" />
     <Content Include="Site1.Master" />
+    <Content Include="Students\Web.config" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

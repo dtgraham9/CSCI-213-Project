@@ -13,7 +13,7 @@
     <table class="auto-style2">
         <tr>
             <td class="auto-style1">Select the Date of Appointment.<br />
-                <asp:Calendar ID="Calendar1" runat="server" BackColor="White" BorderColor="White" BorderWidth="1px" Font-Names="Verdana" Font-Size="9pt" ForeColor="Black" Height="165px" NextPrevFormat="FullMonth" Width="224px">
+                <asp:Calendar ID="Calendar1" runat="server" BackColor="White" BorderColor="White" BorderWidth="1px" Font-Names="Verdana" Font-Size="9pt" ForeColor="Black" Height="165px" NextPrevFormat="FullMonth" Width="224px" OnSelectionChanged="Calendar1_SelectionChanged">
                     <DayHeaderStyle Font-Bold="True" Font-Size="8pt" />
                     <NextPrevStyle Font-Bold="True" Font-Size="8pt" ForeColor="#333333" VerticalAlign="Bottom" />
                     <OtherMonthDayStyle ForeColor="#999999" />
@@ -21,6 +21,7 @@
                     <TitleStyle BackColor="White" BorderColor="Black" BorderWidth="4px" Font-Bold="True" Font-Size="12pt" ForeColor="#333399" />
                     <TodayDayStyle BackColor="#CCCCCC" />
                 </asp:Calendar>
+                <asp:Label ID="Label1" runat="server" Text="Label"></asp:Label>
             </td>
             
         </tr>

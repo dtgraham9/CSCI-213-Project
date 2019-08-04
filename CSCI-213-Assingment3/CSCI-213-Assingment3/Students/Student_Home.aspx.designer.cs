@@ -13,6 +13,15 @@ namespace CSCI_213_Assingment3.Students {
     public partial class Student_Home {
         
         /// <summary>
+        /// nameLbl control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label nameLbl;
+        
+        /// <summary>
         /// HyperLink1 control.
         /// </summary>
         /// <remarks>
@@ -101,5 +110,23 @@ namespace CSCI_213_Assingment3.Students {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button SendMsgBtn;
+        
+        /// <summary>
+        /// appointmentsView control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.GridView appointmentsView;
+        
+        /// <summary>
+        /// GridView2 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.GridView GridView2;
     }
 }
