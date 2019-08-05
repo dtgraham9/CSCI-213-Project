@@ -30,6 +30,9 @@
             width: 354px;
             height: 144px;
         }
+        .auto-style12 {
+            color: #FF0000;
+        }
     </style>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
@@ -67,7 +70,7 @@
                     <SortedDescendingCellStyle BackColor="#FCF6C0" />
                     <SortedDescendingHeaderStyle BackColor="#820000" />
         </asp:GridView>
-                    <asp:Button ID="deleteEmBtn" runat="server" OnClick="deleteEmBtn_Click" Text="Delete Email" />
+                    <asp:Button ID="deleteEmBtn" runat="server" OnClick="deleteEmBtn_Click" Text="Delete Email" CausesValidation="False" />
                 </td>
                 <td class="auto-style8">&nbsp;<br />
 &nbsp;
@@ -113,7 +116,9 @@
                     </asp:GridView>
                 </td>
                 <td class="auto-style9">
-                    <asp:TextBox ID="TextBox1" runat="server" Height="104px" Width="594px"></asp:TextBox></td>
+                    <asp:TextBox ID="TextBox1" runat="server" Height="104px" Width="594px"></asp:TextBox>
+                    <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ControlToValidate="TextBox1" CssClass="auto-style12" ErrorMessage="Enter Message"></asp:RequiredFieldValidator>
+                </td>
                 <td rowspan="2">
                     <br />
                 </td>
@@ -145,11 +150,11 @@
         <SortedDescendingHeaderStyle BackColor="#820000" />
     </asp:GridView>
   
-    <asp:Button ID="deleteBtn" runat="server" OnClick="deleteBtn_Click" Text="Cancel Appointment" />
+    <asp:Button ID="deleteBtn" runat="server" OnClick="deleteBtn_Click" Text="Cancel Appointment" CausesValidation="False" />
   
     <p>
-        <asp:Button ID="AdvisorViewAll" runat="server" Text="Advisor View All" />
+        <asp:Button ID="AdvisorViewAll" runat="server" Text="Advisor View All" CausesValidation="False" />
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-        <asp:Button ID="AdvisorViewOwn" runat="server" OnClick="AdvisorViewOwn_Click" Text="Advisor View Own" />
+        <asp:Button ID="AdvisorViewOwn" runat="server" OnClick="AdvisorViewOwn_Click" Text="Advisor View Own" CausesValidation="False" />
     </p>
 </asp:Content>
