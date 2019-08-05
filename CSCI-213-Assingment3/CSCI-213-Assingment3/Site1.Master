@@ -17,9 +17,10 @@
 <body>
     <form id="form1" runat="server">
     <header>
-        &nbsp;<asp:HyperLink ID="HyperLink1" runat="server" BorderStyle="Solid" BorderWidth="1px" CssClass="auto-style1" NavigateUrl="~/Students/Student_Home.aspx"> Home </asp:HyperLink>
-&nbsp;&nbsp;&nbsp;&nbsp;
-        <asp:LoginStatus ID="LoginStatus1" runat="server" BorderStyle="Solid" BorderWidth="1px" CssClass="auto-style1" LoginText=" Login " LogoutText=" Logout " />
+        &nbsp;<asp:Image ID="Image1" runat="server" Height="45px" ImageAlign="Middle" ImageUrl="~/Images/index.png" Width="47px" />
+        <asp:HyperLink ID="HyperLink1" runat="server" BorderStyle="None" CssClass="auto-style1" NavigateUrl="~/Students/Student_Home.aspx"> Home </asp:HyperLink>
+        &nbsp;&nbsp;
+        <asp:LoginStatus ID="LoginStatus1" runat="server" BorderStyle="None" BorderWidth="1px" CssClass="auto-style1" LoginText=" Login " LogoutText=" Logout " />
         &nbsp;
         </header>
         <div>

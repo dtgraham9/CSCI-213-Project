@@ -138,8 +138,8 @@ namespace CSCI_213_Assingment3.Students
             if (Calendar1.SelectedDate > DateTime.Now)
             {
                 Fill_Drop_Down(Calendar1.SelectedDate);
-                Label1.Visible = false;
 
+                Label1.Visible = false;
             }
             else
             {

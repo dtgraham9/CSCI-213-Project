@@ -12,11 +12,6 @@
         .auto-style6 {
             width: 354px;
         }
-        .auto-style7 {
-            height: 25px;
-            width: 187px;
-            background-color: #FFFFFF;
-        }
         .auto-style8 {
             width: 187px;
         }
@@ -60,7 +55,7 @@
     
         <table class="auto-style10">
             <tr>
-                <td class="auto-style5">
+                <td class="auto-style5" colspan="2">
                     <asp:HyperLink ID="HyperLink1" runat="server" NavigateUrl="~/Students/Appointment_Page.aspx" CssClass="auto-style13">Make a new appointment</asp:HyperLink>
   
     <br class="auto-style13" />
@@ -80,10 +75,13 @@
         <SortedDescendingHeaderStyle BackColor="#820000" />
     </asp:GridView>
   
+    &nbsp;<asp:Button ID="Button1" runat="server" CausesValidation="False" OnClick="Button1_Click" Text="Add Appointment" />
+&nbsp;&nbsp;
+  
     <asp:Button ID="deleteBtn" runat="server" OnClick="deleteBtn_Click" Text="Cancel Appointment" CausesValidation="False" CssClass="auto-style13" />
   
                 </td>
-                <td class="auto-style7">&nbsp;</td>
+               
                 
                 
             </tr>

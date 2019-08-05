@@ -28,7 +28,7 @@
                     <TitleStyle BackColor="White" BorderColor="Black" BorderWidth="4px" Font-Bold="True" Font-Size="12pt" ForeColor="#333399" />
                     <TodayDayStyle BackColor="#CCCCCC" />
                 </asp:Calendar>
-                <asp:Label ID="Label1" runat="server" CssClass="auto-style4" Text="Please select a future date" Visible="False"></asp:Label>
+                <asp:Label ID="Label1" runat="server" CssClass="auto-style4" Text="Make a future appointment" Visible="False"></asp:Label>
             </td>
             
         </tr>

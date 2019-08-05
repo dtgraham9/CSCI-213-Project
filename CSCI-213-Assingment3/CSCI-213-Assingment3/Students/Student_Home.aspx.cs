@@ -450,6 +450,11 @@ namespace CSCI_213_Assingment3.Students
                 appointmentsView.SelectRow(0);
         }
 
+        protected void Button1_Click(object sender, EventArgs e)
+        {
+            Response.Redirect(ResolveUrl("Appointment_Page.aspx"));
+        }
+
         protected void Page_Load(object sender, EventArgs e)
         {
             UnobtrusiveValidationMode = System.Web.UI.UnobtrusiveValidationMode.None;

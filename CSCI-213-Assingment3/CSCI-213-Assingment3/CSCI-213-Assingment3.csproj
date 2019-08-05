@@ -100,6 +100,7 @@
       <DependentUpon>AppointmentDB.mdf</DependentUpon>
     </Content>
     <Content Include="default.aspx" />
+    <Content Include="Images\index.png" />
     <Content Include="Login_Page.aspx" />
     <Content Include="Students\Appointment_Page.aspx" />
     <Content Include="Students\Student_Home.aspx" />
