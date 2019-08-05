@@ -22,31 +22,13 @@ namespace CSCI_213_Assingment3.Students {
         protected global::System.Web.UI.WebControls.Label nameLbl;
         
         /// <summary>
-        /// appointmentsView control.
+        /// HyperLink1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.GridView appointmentsView;
-        
-        /// <summary>
-        /// Button1 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button Button1;
-        
-        /// <summary>
-        /// deleteBtn control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button deleteBtn;
+        protected global::System.Web.UI.WebControls.HyperLink HyperLink1;
         
         /// <summary>
         /// EmailView control.
@@ -85,6 +67,15 @@ namespace CSCI_213_Assingment3.Students {
         protected global::System.Web.UI.WebControls.Label messageLb;
         
         /// <summary>
+        /// StudentsView control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.GridView StudentsView;
+        
+        /// <summary>
         /// TextBox1 control.
         /// </summary>
         /// <remarks>
@@ -103,15 +94,6 @@ namespace CSCI_213_Assingment3.Students {
         protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidator1;
         
         /// <summary>
-        /// StudentsView control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.GridView StudentsView;
-        
-        /// <summary>
         /// SendMsgBtn control.
         /// </summary>
         /// <remarks>
@@ -119,6 +101,24 @@ namespace CSCI_213_Assingment3.Students {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button SendMsgBtn;
+        
+        /// <summary>
+        /// appointmentsView control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.GridView appointmentsView;
+        
+        /// <summary>
+        /// deleteBtn control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button deleteBtn;
         
         /// <summary>
         /// AdvisorViewAll control.

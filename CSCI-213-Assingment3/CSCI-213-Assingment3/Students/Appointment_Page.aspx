@@ -28,16 +28,14 @@
                     <TitleStyle BackColor="White" BorderColor="Black" BorderWidth="4px" Font-Bold="True" Font-Size="12pt" ForeColor="#333399" />
                     <TodayDayStyle BackColor="#CCCCCC" />
                 </asp:Calendar>
-                <asp:Label ID="Label1" runat="server" CssClass="auto-style4" Text="Please select a future date" Visible="False"></asp:Label>
             </td>
             
         </tr>
         <tr>
             <td class="auto-style3"> Time of the appointment
                 <asp:DropDownList ID="DropDownList1" runat="server" OnSelectedIndexChanged="DropDownList1_SelectedIndexChanged">
-                </asp:DropDownList><br />
+                </asp:DropDownList>
                 <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ControlToValidate="DropDownList1" CssClass="auto-style4" ErrorMessage="No Available Times"></asp:RequiredFieldValidator>
-                <br />
                 <br />
                 <asp:Label ID="studentLB" runat="server" Text="Appointment for "></asp:Label>
                 <asp:GridView ID="StudentsView" runat="server" AutoGenerateSelectButton="True" CellPadding="4" ForeColor="#333333" GridLines="None" OnSelectedIndexChanged="StudentsView_SelectedIndexChanged">

@@ -7,27 +7,17 @@
     <title></title>
     <asp:ContentPlaceHolder ID="head" runat="server">
     </asp:ContentPlaceHolder>
-    <style type="text/css">
-        .auto-style1 {
-            text-decoration: none;
-            color: #333333;
-        }
-    </style>
 </head>
 <body>
     <form id="form1" runat="server">
-    <header >
-        &nbsp;<asp:Image ID="Image1" runat="server" Height="46px" ImageUrl="~/Images/index.png" Width="46px" />
-        
-&nbsp;<asp:HyperLink ID="HyperLink1" runat="server" CssClass="auto-style1" NavigateUrl="~/Students/Student_Home.aspx"> Home </asp:HyperLink>
-&nbsp;<asp:LoginStatus ID="LoginStatus1" runat="server" CssClass="auto-style1" LoginText=" Login " LogoutText=" Logout " />
-        &nbsp;
+    <header>
+        <asp:LoginStatus ID="LoginStatus1" runat="server" />
         </header>
         <div>
             <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
             </asp:ContentPlaceHolder>
         </div>
     </form>
-    <footer>Copyright and other info would go here</footer>
+    <footer>This is the footer. It is also great</footer>
 </body>
 </html>
