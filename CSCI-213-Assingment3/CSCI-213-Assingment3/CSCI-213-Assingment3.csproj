@@ -75,7 +75,6 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Advisors\Advisor_Home.aspx" />
     <Content Include="AppointmentDBModel.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>AppointmentDBModel.Context.cs</LastGenOutput>
@@ -107,13 +106,6 @@
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Advisors\Advisor_Home.aspx.cs">
-      <DependentUpon>Advisor_Home.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Advisors\Advisor_Home.aspx.designer.cs">
-      <DependentUpon>Advisor_Home.aspx</DependentUpon>
-    </Compile>
     <Compile Include="AdvisorTable.cs">
       <DependentUpon>AppointmentModel.tt</DependentUpon>
     </Compile>
@@ -223,6 +215,9 @@
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Advisors\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

@@ -1,14 +1,8 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site1.Master" AutoEventWireup="true" CodeBehind="Student_Home.aspx.cs" Inherits="CSCI_213_Assingment3.Students.Student_Home" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
     <style type="text/css">
-        .auto-style2 {
-            font-size: xx-small;
-        }
         .auto-style3 {
             font-size: large;
-        }
-        .auto-style4 {
-            font-size: medium;
         }
         .auto-style5 {
             height: 25px;
@@ -27,48 +21,65 @@
         .auto-style9 {
             width: 187px;
             text-align: right;
+            height: 144px;
         }
         .auto-style10 {
             width: 100%;
+        }
+        .auto-style11 {
+            width: 354px;
+            height: 144px;
         }
     </style>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <p>
+        Welcome Back
         <asp:Label ID="nameLbl" runat="server" Text="Label"></asp:Label>
-        <br />
     </p>
     
         <table class="auto-style10">
             <tr>
                 <td class="auto-style5">
-                    <asp:HyperLink ID="HyperLink1" runat="server" NavigateUrl="~/Students/Apointment_Page.aspx">Make a new appointment</asp:HyperLink>
+                    <asp:HyperLink ID="HyperLink1" runat="server" NavigateUrl="~/Students/Appointment_Page.aspx">Make a new appointment</asp:HyperLink>
                 </td>
                 <td class="auto-style7">&nbsp;</td>
                 <td colspan="1" rowspan="3">
-                    <asp:DetailsView ID="DetailsView2" runat="server" AutoGenerateRows="False" Height="205px" Width="605px">
-                    </asp:DetailsView>
-                    <asp:SqlDataSource ID="SqlDataSource2" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>" SelectCommand="SELECT [EmailDate], [EmailFrom], [EmailTo], [EmailText] FROM [MessagesTable] ORDER BY [EmailDate], [EmailFrom]"></asp:SqlDataSource>
-                </td>
+                    &nbsp;</td>
                 
                 <td rowspan="6">
                     &nbsp;</td>
                 
             </tr>
             <tr>
-                <td class="auto-style6"><strong><span class="auto-style3">Your current appointments 
-                    </span></strong> 
+                <td class="auto-style6">
                     <br />
-                    <asp:ListBox ID="ListBox1" runat="server" Height="77px" Width="196px" CssClass="auto-style4"></asp:ListBox>
-                    <br />
-                    <asp:Button ID="cancelBtn" runat="server" Text="Cancel Appointment" CssClass="auto-style2" OnClick="cancelBtn_Click" Width="122px" Font-Size="Small" Height="23px" />    
                     &nbsp;&nbsp;
+                <asp:GridView ID="EmailView" runat="server" AutoGenerateSelectButton="True" CellPadding="4" ClientIDMode="Static" ForeColor="#333333" GridLines="None" OnSelectedIndexChanged="EmailView_SelectedIndexChanged">
+                    <AlternatingRowStyle BackColor="White" />
+                    <FooterStyle BackColor="#990000" Font-Bold="True" ForeColor="White" />
+                    <HeaderStyle BackColor="#990000" Font-Bold="True" ForeColor="White" />
+                    <PagerStyle BackColor="#FFCC66" ForeColor="#333333" HorizontalAlign="Center" />
+                    <RowStyle BackColor="#FFFBD6" ForeColor="#333333" />
+                    <SelectedRowStyle BackColor="#FFCC66" Font-Bold="True" ForeColor="Navy" />
+                    <SortedAscendingCellStyle BackColor="#FDF5AC" />
+                    <SortedAscendingHeaderStyle BackColor="#4D0000" />
+                    <SortedDescendingCellStyle BackColor="#FCF6C0" />
+                    <SortedDescendingHeaderStyle BackColor="#820000" />
+        </asp:GridView>
+                    <asp:Button ID="deleteEmBtn" runat="server" OnClick="deleteEmBtn_Click" Text="Delete Email" />
                 </td>
-                <td class="auto-style8">Messages <br />
-                    <asp:ListBox ID="ListBox2" runat="server" Height="96px" Width="171px"></asp:ListBox>
-                    <asp:Button ID="SelectMsgBtn" runat="server" Text="Select" />
+                <td class="auto-style8">&nbsp;<br />
 &nbsp;
-                    <asp:Button ID="DelMsgBtn" runat="server" Text="Delete" />
+                    <asp:DetailsView ID="DetailEmailView" runat="server" CellPadding="4" ForeColor="#333333" GridLines="None" Height="156px" Width="521px">
+                        <AlternatingRowStyle BackColor="White" />
+                        <CommandRowStyle BackColor="#FFFFC0" Font-Bold="True" />
+                        <FieldHeaderStyle BackColor="#FFFF99" Font-Bold="True" />
+                        <FooterStyle BackColor="#990000" Font-Bold="True" ForeColor="White" />
+                        <HeaderStyle BackColor="#990000" Font-Bold="True" ForeColor="White" />
+                        <PagerStyle BackColor="#FFCC66" ForeColor="#333333" HorizontalAlign="Center" />
+                        <RowStyle BackColor="#FFFBD6" ForeColor="#333333" />
+                    </asp:DetailsView>
                 </td>
                 
             </tr>
@@ -85,27 +96,60 @@
               
             </tr>
             <tr>
-                <td class="auto-style6">
-                    &nbsp;</td>
-                <td class="auto-style9">New Message To Advisor:</td>
+                <td class="auto-style11">
+                    <br />
+                    <asp:Label ID="messageLb" runat="server" Text="New Message To Advisor"></asp:Label>
+                    <asp:GridView ID="StudentsView" runat="server" AutoGenerateSelectButton="True" CellPadding="4" ForeColor="#333333" GridLines="None" OnSelectedIndexChanged="StudentsView_SelectedIndexChanged">
+                        <AlternatingRowStyle BackColor="White" />
+                        <FooterStyle BackColor="#990000" Font-Bold="True" ForeColor="White" />
+                        <HeaderStyle BackColor="#990000" Font-Bold="True" ForeColor="White" />
+                        <PagerStyle BackColor="#FFCC66" ForeColor="#333333" HorizontalAlign="Center" />
+                        <RowStyle BackColor="#FFFBD6" ForeColor="#333333" />
+                        <SelectedRowStyle BackColor="#FFCC66" Font-Bold="True" ForeColor="Navy" />
+                        <SortedAscendingCellStyle BackColor="#FDF5AC" />
+                        <SortedAscendingHeaderStyle BackColor="#4D0000" />
+                        <SortedDescendingCellStyle BackColor="#FCF6C0" />
+                        <SortedDescendingHeaderStyle BackColor="#820000" />
+                    </asp:GridView>
+                </td>
+                <td class="auto-style9">
+                    <asp:TextBox ID="TextBox1" runat="server" Height="104px" Width="594px"></asp:TextBox></td>
                 <td rowspan="2">
-                    <asp:TextBox ID="TextBox1" runat="server" Height="104px" Width="594px"></asp:TextBox><br />
-                    <asp:Button ID="SendMsgBtn" runat="server" Text="Send" />
+                    <br />
                 </td>
             </tr>
             <tr>
                 <td class="auto-style6">
                     &nbsp;</td>
-                <td class="auto-style8">&nbsp;</td>
+                <td class="auto-style8">
+                    <asp:Button ID="SendMsgBtn" runat="server" Text="Send" OnClick="SendMsgBtn_Click" />
+                </td>
               
             </tr>
         </table>
   
-    <asp:GridView ID="appointmentsView" runat="server" AutoGenerateDeleteButton="True" AutoGenerateSelectButton="True">
+    <br />
+    <strong><span class="auto-style3">Your current appointments 
+                    </span></strong> 
+  
+    <asp:GridView ID="appointmentsView" runat="server" AutoGenerateSelectButton="True" CellPadding="4" ForeColor="#333333" GridLines="None" OnSelectedIndexChanged="appointmentsView_SelectedIndexChanged">
+        <AlternatingRowStyle BackColor="White" />
+        <FooterStyle BackColor="#990000" Font-Bold="True" ForeColor="White" />
+        <HeaderStyle BackColor="#990000" Font-Bold="True" ForeColor="White" />
+        <PagerStyle BackColor="#FFCC66" ForeColor="#333333" HorizontalAlign="Center" />
+        <RowStyle BackColor="#FFFBD6" ForeColor="#333333" />
+        <SelectedRowStyle BackColor="#FFCC66" Font-Bold="True" ForeColor="Navy" />
+        <SortedAscendingCellStyle BackColor="#FDF5AC" />
+        <SortedAscendingHeaderStyle BackColor="#4D0000" />
+        <SortedDescendingCellStyle BackColor="#FCF6C0" />
+        <SortedDescendingHeaderStyle BackColor="#820000" />
     </asp:GridView>
   
+    <asp:Button ID="deleteBtn" runat="server" OnClick="deleteBtn_Click" Text="Cancel Appointment" />
+  
     <p>
-        <asp:GridView ID="GridView2" runat="server">
-        </asp:GridView>
+        <asp:Button ID="AdvisorViewAll" runat="server" Text="Advisor View All" />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <asp:Button ID="AdvisorViewOwn" runat="server" OnClick="AdvisorViewOwn_Click" Text="Advisor View Own" />
     </p>
 </asp:Content>

@@ -7,6 +7,13 @@
         .auto-style2 {
             width: 100%;
         }
+        .auto-style3 {
+            width: 272px;
+            height: 30px;
+        }
+        .auto-style4 {
+            color: #FF0000;
+        }
     </style>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
@@ -21,14 +28,28 @@
                     <TitleStyle BackColor="White" BorderColor="Black" BorderWidth="4px" Font-Bold="True" Font-Size="12pt" ForeColor="#333399" />
                     <TodayDayStyle BackColor="#CCCCCC" />
                 </asp:Calendar>
-                <asp:Label ID="Label1" runat="server" Text="Label"></asp:Label>
             </td>
             
         </tr>
         <tr>
-            <td class="auto-style1"> Time of the appointment
-                <asp:DropDownList ID="DropDownList1" runat="server">
+            <td class="auto-style3"> Time of the appointment
+                <asp:DropDownList ID="DropDownList1" runat="server" OnSelectedIndexChanged="DropDownList1_SelectedIndexChanged">
                 </asp:DropDownList>
+                <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ControlToValidate="DropDownList1" CssClass="auto-style4" ErrorMessage="No Available Times"></asp:RequiredFieldValidator>
+                <br />
+                <asp:Label ID="studentLB" runat="server" Text="Appointment for "></asp:Label>
+                <asp:GridView ID="StudentsView" runat="server" AutoGenerateSelectButton="True" CellPadding="4" ForeColor="#333333" GridLines="None" OnSelectedIndexChanged="StudentsView_SelectedIndexChanged">
+                    <AlternatingRowStyle BackColor="White" />
+                    <FooterStyle BackColor="#990000" Font-Bold="True" ForeColor="White" />
+                    <HeaderStyle BackColor="#990000" Font-Bold="True" ForeColor="White" />
+                    <PagerStyle BackColor="#FFCC66" ForeColor="#333333" HorizontalAlign="Center" />
+                    <RowStyle BackColor="#FFFBD6" ForeColor="#333333" />
+                    <SelectedRowStyle BackColor="#FFCC66" Font-Bold="True" ForeColor="Navy" />
+                    <SortedAscendingCellStyle BackColor="#FDF5AC" />
+                    <SortedAscendingHeaderStyle BackColor="#4D0000" />
+                    <SortedDescendingCellStyle BackColor="#FCF6C0" />
+                    <SortedDescendingHeaderStyle BackColor="#820000" />
+                </asp:GridView>
             </td>
         </tr>
         <tr>
@@ -38,8 +59,9 @@
         <tr>
             <td class="auto-style1">
                 <asp:Button ID="submitBtn" runat="server" Text="Submit" OnClick="submitBtn_Click" />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <asp:Button ID="backBtn" runat="server" OnClick="backBtn_Click1" Text="Back" />
 &nbsp;&nbsp;
-                <asp:Button ID="clearBtn" runat="server" Text="Clear" />
             </td>
         </tr>
     </table>

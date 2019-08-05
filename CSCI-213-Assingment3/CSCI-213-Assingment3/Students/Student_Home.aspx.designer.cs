@@ -31,67 +31,49 @@ namespace CSCI_213_Assingment3.Students {
         protected global::System.Web.UI.WebControls.HyperLink HyperLink1;
         
         /// <summary>
-        /// DetailsView2 control.
+        /// EmailView control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DetailsView DetailsView2;
+        protected global::System.Web.UI.WebControls.GridView EmailView;
         
         /// <summary>
-        /// SqlDataSource2 control.
+        /// deleteEmBtn control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.SqlDataSource SqlDataSource2;
+        protected global::System.Web.UI.WebControls.Button deleteEmBtn;
         
         /// <summary>
-        /// ListBox1 control.
+        /// DetailEmailView control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ListBox ListBox1;
+        protected global::System.Web.UI.WebControls.DetailsView DetailEmailView;
         
         /// <summary>
-        /// cancelBtn control.
+        /// messageLb control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button cancelBtn;
+        protected global::System.Web.UI.WebControls.Label messageLb;
         
         /// <summary>
-        /// ListBox2 control.
+        /// StudentsView control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ListBox ListBox2;
-        
-        /// <summary>
-        /// SelectMsgBtn control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button SelectMsgBtn;
-        
-        /// <summary>
-        /// DelMsgBtn control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button DelMsgBtn;
+        protected global::System.Web.UI.WebControls.GridView StudentsView;
         
         /// <summary>
         /// TextBox1 control.
@@ -121,12 +103,30 @@ namespace CSCI_213_Assingment3.Students {
         protected global::System.Web.UI.WebControls.GridView appointmentsView;
         
         /// <summary>
-        /// GridView2 control.
+        /// deleteBtn control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.GridView GridView2;
+        protected global::System.Web.UI.WebControls.Button deleteBtn;
+        
+        /// <summary>
+        /// AdvisorViewAll control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button AdvisorViewAll;
+        
+        /// <summary>
+        /// AdvisorViewOwn control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button AdvisorViewOwn;
     }
 }
