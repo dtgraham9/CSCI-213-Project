@@ -53,7 +53,15 @@ namespace CSCI_213_Assingment3.Students
 
         protected void deleteBtn_Click(object sender, EventArgs e)
         {
-            int appointmentIdentifier = Convert.ToInt32(appointmentsView.SelectedRow.Cells[1].Text);
+            int appointmentIdentifier;
+            try
+            {
+                appointmentIdentifier = Convert.ToInt32(appointmentsView.SelectedRow.Cells[1].Text);
+            }
+            catch (Exception)
+            {
+                return;
+            }
             NewBDcon();
             dbcon.AppointmentTables.Load();
             dbcon.MessagesTables.Load();
@@ -165,7 +173,15 @@ namespace CSCI_213_Assingment3.Students
 
         protected void deleteEmBtn_Click(object sender, EventArgs e)
         {
-            int emailIdentifier = Convert.ToInt32(EmailView.SelectedRow.Cells[1].Text);
+            int emailIdentifier;
+            try
+            {
+                emailIdentifier = Convert.ToInt32(EmailView.SelectedRow.Cells[1].Text);
+            }
+            catch (Exception)
+            {
+                return;
+            }
             NewBDcon();
             dbcon.StudentTables.Load();
             dbcon.UserTables.Load();
@@ -348,12 +364,15 @@ namespace CSCI_213_Assingment3.Students
             appointmentsView.DataSource = formatedResults;
             appointmentsView.DataBind();
             if (appointmentsView.Rows.Count != 0)
+            {
                 appointmentsView.SelectRow(0);
+            }
+                
         }
 
         protected void AdvisorViewOwn_Click(object sender, EventArgs e)
         {
-            View_All_Appointments();
+            View_Own_Appointments();
         }
 
         protected void View_Own_Appointments()
@@ -453,6 +472,11 @@ namespace CSCI_213_Assingment3.Students
         protected void Button1_Click(object sender, EventArgs e)
         {
             Response.Redirect(ResolveUrl("Appointment_Page.aspx"));
+        }
+
+        protected void AdvisorViewAll_Click(object sender, EventArgs e)
+        {
+            View_All_Appointments();
         }
 
         protected void Page_Load(object sender, EventArgs e)

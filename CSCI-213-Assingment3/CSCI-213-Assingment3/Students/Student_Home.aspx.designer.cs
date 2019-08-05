@@ -58,6 +58,24 @@ namespace CSCI_213_Assingment3.Students {
         protected global::System.Web.UI.WebControls.Button deleteBtn;
         
         /// <summary>
+        /// AdvisorViewAll control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button AdvisorViewAll;
+        
+        /// <summary>
+        /// AdvisorViewOwn control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button AdvisorViewOwn;
+        
+        /// <summary>
         /// EmailView control.
         /// </summary>
         /// <remarks>
@@ -128,23 +146,5 @@ namespace CSCI_213_Assingment3.Students {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button SendMsgBtn;
-        
-        /// <summary>
-        /// AdvisorViewAll control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button AdvisorViewAll;
-        
-        /// <summary>
-        /// AdvisorViewOwn control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button AdvisorViewOwn;
     }
 }

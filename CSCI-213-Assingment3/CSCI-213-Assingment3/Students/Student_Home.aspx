@@ -56,7 +56,7 @@
         <table class="auto-style10">
             <tr>
                 <td class="auto-style5" colspan="2">
-                    <asp:HyperLink ID="HyperLink1" runat="server" NavigateUrl="~/Students/Appointment_Page.aspx" CssClass="auto-style13">Make a new appointment</asp:HyperLink>
+                    <asp:HyperLink ID="HyperLink1" runat="server" NavigateUrl="~/Students/Appointment_Page.aspx" CssClass="auto-style13" Visible="False">Make a new appointment</asp:HyperLink>
   
     <br class="auto-style13" />
     <strong><span class="auto-style3">Your current appointments 
@@ -79,6 +79,10 @@
 &nbsp;&nbsp;
   
     <asp:Button ID="deleteBtn" runat="server" OnClick="deleteBtn_Click" Text="Cancel Appointment" CausesValidation="False" CssClass="auto-style13" />
+  
+                &nbsp;<asp:Button ID="AdvisorViewAll" runat="server" Text="Advisor View All" CausesValidation="False" CssClass="auto-style13" OnClick="AdvisorViewAll_Click" />
+        &nbsp;
+        <asp:Button ID="AdvisorViewOwn" runat="server" OnClick="AdvisorViewOwn_Click" Text="Advisor View Own" CausesValidation="False" CssClass="auto-style13" />
   
                 </td>
                
@@ -182,9 +186,7 @@
         </table>
   
     <p>
-        <asp:Button ID="AdvisorViewAll" runat="server" Text="Advisor View All" CausesValidation="False" CssClass="auto-style13" />
         <span class="auto-style13">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
         </span>
-        <asp:Button ID="AdvisorViewOwn" runat="server" OnClick="AdvisorViewOwn_Click" Text="Advisor View Own" CausesValidation="False" CssClass="auto-style13" />
     </p>
 </asp:Content>
