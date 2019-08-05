@@ -107,6 +107,7 @@ namespace CSCI_213_Assingment3.Students
                          join user in dbcon.UserTables on email.EmailTo equals user.UserEmail
                          where user.UserName == userName
                          select email;
+
             var formatSingleEmail = from email in emails
                                     select new
                                     {
@@ -115,6 +116,7 @@ namespace CSCI_213_Assingment3.Students
                                         Date = email.EmailDate.ToShortDateString() + " " + email.EmailDate.Add(email.EmailTime).ToString("hh:mm tt"),
                                         Message = email.EmailText
                                     };
+
             var formatEmails = from email in emails
                                select new
                                {
@@ -125,9 +127,11 @@ namespace CSCI_213_Assingment3.Students
                                };
 
             DetailEmailView.DataSource = formatSingleEmail;
+            
             DetailEmailView.DataBind();
             EmailView.DataSource = formatEmails;
             EmailView.DataBind();
+
             if(EmailView.Rows.Count !=0)
                 EmailView.SelectRow(0);
         }
@@ -145,6 +149,7 @@ namespace CSCI_213_Assingment3.Students
             var emails = from email in dbcon.MessagesTables.Local
                          where email.EmailID == emailIdentifier
                          select email;
+
             var formatSingleEmail = from email in emails
                                     select new
                                     {
@@ -153,6 +158,7 @@ namespace CSCI_213_Assingment3.Students
                                         Date = email.EmailDate.ToShortDateString() + " " + email.EmailDate.Add(email.EmailTime).ToString("hh:mm tt"),
                                         Message = email.EmailText
                                     };
+
             DetailEmailView.DataSource = formatSingleEmail;
             DetailEmailView.DataBind();
         }
@@ -184,6 +190,7 @@ namespace CSCI_213_Assingment3.Students
             string userName = User.Identity.Name;
             string role = check_role();
             string advisorEmail, studentEmail;
+
             if ("advisor" == role)
             {
                 advisorEmail = (from advisor in dbcon.AdvisorTables.Local
@@ -205,7 +212,9 @@ namespace CSCI_213_Assingment3.Students
                                 join user in dbcon.UserTables.Local on advisors.AdvisorUserName equals user.UserName
                                 select user.UserEmail).First();
             }
+
             MessagesTable message;
+
             if (TextBox1.Text != "")
             {
                 string emailMessage = TextBox1.Text;
@@ -217,6 +226,7 @@ namespace CSCI_213_Assingment3.Students
                     EmailFrom = studentEmail,
                     EmailText = emailMessage
                 };
+
                 dbcon.MessagesTables.Add(message);
                 dbcon.SaveChanges();
             }
@@ -241,6 +251,7 @@ namespace CSCI_213_Assingment3.Students
                               where advisors.AdvisorUserName == userName
                               join student in dbcon.StudentTables.Local on advisors.AdvisorID equals student.StudentAdvisorID
                               join user in dbcon.UserTables.Local on student.StudentUserName equals user.UserName
+
                               select new
                               {
                                   StudentID = student.StudentID,
@@ -254,9 +265,9 @@ namespace CSCI_213_Assingment3.Students
             {
                 StudentsView.SelectRow(0);
                 messageLb.Text = "New Message To " + StudentsView.SelectedRow.Cells[2].Text;
-            }
-           
+            }           
         }
+
         protected void Loading_Page()
         {
             string role = check_role();
@@ -286,9 +297,6 @@ namespace CSCI_213_Assingment3.Students
             dbcon.AdvisorTables.Load();
             dbcon.AppointmentTables.Load();
             View_Own_Appointments();
-
-
-
         }
 
         protected void StudentsView_SelectedIndexChanged(object sender, EventArgs e)
@@ -440,6 +448,11 @@ namespace CSCI_213_Assingment3.Students
             appointmentsView.DataBind();
             if (appointmentsView.Rows.Count != 0)
                 appointmentsView.SelectRow(0);
+        }
+
+        protected void Button1_Click(object sender, EventArgs e)
+        {
+            Response.Redirect(ResolveUrl("Appointment_Page.aspx"));
         }
 
         protected void Page_Load(object sender, EventArgs e)
