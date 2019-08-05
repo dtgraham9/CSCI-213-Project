@@ -7,11 +7,20 @@
     <title></title>
     <asp:ContentPlaceHolder ID="head" runat="server">
     </asp:ContentPlaceHolder>
+    <style type="text/css">
+        .auto-style1 {
+            text-decoration: none;
+            color: #333333;
+        }
+    </style>
 </head>
 <body>
     <form id="form1" runat="server">
     <header>
-        <asp:LoginStatus ID="LoginStatus1" runat="server" />
+        &nbsp;<asp:HyperLink ID="HyperLink1" runat="server" BorderStyle="Solid" BorderWidth="1px" CssClass="auto-style1" NavigateUrl="~/Students/Student_Home.aspx"> Home </asp:HyperLink>
+&nbsp;&nbsp;&nbsp;&nbsp;
+        <asp:LoginStatus ID="LoginStatus1" runat="server" BorderStyle="Solid" BorderWidth="1px" CssClass="auto-style1" LoginText=" Login " LogoutText=" Logout " />
+        &nbsp;
         </header>
         <div>
             <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">

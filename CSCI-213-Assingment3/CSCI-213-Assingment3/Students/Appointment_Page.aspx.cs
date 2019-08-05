@@ -135,7 +135,16 @@ namespace CSCI_213_Assingment3.Students
 
         protected void Calendar1_SelectionChanged(object sender, EventArgs e)
         {
-            Fill_Drop_Down(Calendar1.SelectedDate);
+            if (Calendar1.SelectedDate > DateTime.Now)
+            {
+                Fill_Drop_Down(Calendar1.SelectedDate);
+                Label1.Visible = false;
+
+            }
+            else
+            {
+                Label1.Visible = true;
+            }
             
         }
 
